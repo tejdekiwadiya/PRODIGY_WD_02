@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+:root {
+    --white: white;
+    --bg-box-tras: #0000000d;
+    --bg-subbox-tras: #0059ff1b;
+    --pink: #ff00ee;
+    --blue: #00ccff;
+    --red: #ff0000b4;
+    --light-red: #ff00006b;
+    --green: #00ff00;
+    --gray: gray;
+    --light-white: rgba(255, 255, 255, 0.368);
+}
+
+* {
+    scroll-behavior: smooth;
+    font-family: 'Ubuntu', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+    height: 100%;
+    background: url(bg.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+}
+
+.To-Do {
+    height: 100vh;
+}
+
+.container {
+    padding: 2rem;
+    background: var(--bg-box-tras);
+    box-shadow: 1.25rem 1.25rem 2.5rem -0.375rem rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(1.25rem);
+    border-radius: 0.625rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container_title {
+    margin: 1rem;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    font-weight: bold;
+    font-size: 20pt;
+    color: var(--white);
+}
+
+.hover {
+    transition: 0.5s all ease-in-out;
+}
+
+.warning {
+    font-size: 15pt;
+    padding: 0.4rem;
+    background: var(--light-red);
+    box-shadow: 1.25rem 1.25rem 2.5rem -0.375rem rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1.25rem);
+    color: var(--white);
+    position: relative;
+    margin-top: 0.5rem;
+    display: none;
+    border-radius: 1rem;
+}
+
+.empty {
+    font-size: 15pt;
+    padding: 0.4rem;
+    background: var(--light-red);
+    box-shadow: 1.25rem 1.25rem 2.5rem -0.375rem rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1.25rem);
+    color: var(--white);
+    position: relative;
+    margin-top: 0.5rem;
+    display: none;
+    border-radius: 1rem;
+}
+
+.done {
+    color: var(--light-white);
+}
+
+.hover:hover {
+    text-shadow: -0.25rem -0.25rem 0.625rem var(--pink), 0.25rem 0.25rem 0.625rem var(--blue);
+    scale: 1.09;
+}
+
+.container_input {
+    padding-bottom: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.input[type=text] {
+    width: 100%;
+    letter-spacing: 0.0125rem;
+    box-sizing: border-box;
+    background: var(--bg-box-tras);
+    border-radius: 0.3125rem;
+    border: 0.1875rem solid var(--white);
+    color: var(--white);
+    padding: 0.625rem 0.75rem;
+    font-size: 1.25rem;
+    outline: none;
+    transition: 0.5s all ease-in-out;
+}
+
+.input[type=text]:focus {
+    border: 0.1875rem solid var(--blue);
+    /* box-shadow: -0.25rem -0.25rem 0.375rem var(--pink); */
+    box-shadow: -0.1875rem -0.1875rem 0.625rem var(--pink), 0.1875rem 0.1875rem 0.625rem var(--blue);
+}
+
+.button_input {
+    font-weight: bolder;
+    background: var(--bg-box-tras);
+    border-radius: 0.3125rem;
+    border: 0.1875rem solid var(--white);
+    color: var(--white);
+    font-size: 0.9375rem;
+    outline: none;
+    transition: 0.5s all ease-in-out;
+}
+
+.button_input:hover {
+    color: var(--blue);
+    border: 0.1875rem solid var(--blue);
+}
+
+.red:hover {
+    color: var(--red);
+    border: 0.1875rem solid var(--red);
+}
+
+.green:hover {
+    color: var(--green);
+    border: 0.1875rem solid var(--green);
+}
+
+.gray:hover {
+    color: var(--gray);
+    border: 0.1875rem solid var(--gray);
+}
+
+.container_task {
+    color: var(--white);
+    overflow: auto;
+    height: 15rem;
+}
+
+.container_task::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.container_task::-webkit-scrollbar-thumb {
+    background-color: var(--white);
+    border-radius: 1rem;
+    margin-left: 10rem;
+}
+
+.task_list {
+    margin-right: 0.5rem;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    word-wrap: break-word;
+    font-size: 1.3rem;
+    gap: 1rem;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: 1rem;
+    align-items: center;
+    text-align: left;
+}
+
+#task {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    position: relative;
+    padding: 1rem;
+    background: var(--bg-subbox-tras);
+    backdrop-filter: blur(1.25rem);
+}
+
+.task_detail {
+    width: 20rem;
+    overflow: auto;
+    text-align: justify;
+}
+
+.button_task {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: bolder;
+    background-color: transparent;
+    border: 0.1875rem solid var(--white);
+    color: var(--white);
+    font-size: 0.9375rem;
+    outline: none;
+    transition: 0.5s all ease-in-out;
+}
