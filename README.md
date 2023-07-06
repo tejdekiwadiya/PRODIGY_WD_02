@@ -1,0 +1,2 @@
+# TO-DO App
+The TO-DO App is a practical web-based project developed using JavaScript, HTML, and CSS. It allows users to create and manage their tasks effectively. With its intuitive design and user-friendly interface, users can add, edit, and delete tasks seamlessly. The app provides features like task prioritization, due dates, and task completion tracking. It utilizes JavaScript for dynamic functionality, enabling real-time updates and notifications. The TO-DO App simplifies task management, helping users stay organized and increase productivity in their daily lives.
